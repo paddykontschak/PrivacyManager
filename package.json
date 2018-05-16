@@ -1,0 +1,35 @@
+{
+  "name": "@becklyn/privacy-manager",
+  "version": "1.0.0",
+  "description": "A privacy and tracking manager that can be embedded into any website to manage tracking scripts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Becklyn/PrivacyManager.git"
+  },
+  "keywords": [
+    "becklyn",
+    "gdpr",
+    "dsgvo",
+    "privacy",
+    "privacy",
+    "manager",
+    "tracking"
+  ],
+  "author": {
+    "name": "Kai Eichinger",
+    "email": "ke@becklyn.com",
+    "url": "https://www.becklyn.com"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/Becklyn/PrivacyManager/issues"
+  },
+  "homepage": "https://github.com/Becklyn/PrivacyManager",
+  "dependencies": {
+    "mojave": "git://github.com/becklyn/mojave#6e02616c5fc1318eba87155495b470ac7a16de16",
+    "preact": "^8.2.9"
+  },
+  "devDependencies": {
+    "kaba": "^5.0.2"
+  }
+}
