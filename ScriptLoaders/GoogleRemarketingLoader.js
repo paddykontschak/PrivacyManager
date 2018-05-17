@@ -1,4 +1,5 @@
 import { BaseScriptLoader } from "./BaseScriptLoader";
+/* eslint-disable */
 
 /**
  * @typedef {{

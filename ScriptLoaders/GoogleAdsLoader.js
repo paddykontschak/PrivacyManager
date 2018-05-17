@@ -1,5 +1,6 @@
 import { BaseScriptLoader } from "./BaseScriptLoader";
 import { findOne } from "mojave/dom/traverse";
+/* eslint-disable */
 
 /**
  * @typedef {{
