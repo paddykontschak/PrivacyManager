@@ -3,7 +3,7 @@ import { h, render } from "preact";
 import { PrivacyManagerBannerComponent } from "./PrivacyManagerBannerComponent";
 import { PrivacyManagerConfigurationComponent } from "./PrivacyManagerConfigurationComponent";
 import { remove } from "mojave/dom/manipulate";
-import { getCookie, setCookie } from "/Users/kaieichinger/Webserver/mojave/cookie.js";
+import { getCookie, setCookie } from "mojave/cookie";
 
 /**
  * @typedef {{

@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/Becklyn/PrivacyManager",
   "dependencies": {
-    "mojave": "git://github.com/becklyn/mojave#6e02616c5fc1318eba87155495b470ac7a16de16",
+    "mojave": "^2.1.0",
     "preact": "^8.2.9"
   },
   "devDependencies": {
