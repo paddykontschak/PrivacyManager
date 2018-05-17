@@ -225,7 +225,9 @@ export class PrivacyManagerComponent
      */
     saveUserSettings (settings)
     {
-        setCookie(PRIVACY_MANAGER_STORAGE_KEY, settings);
+        setCookie(PRIVACY_MANAGER_STORAGE_KEY, settings, {
+            expires: 30,
+        });
 
         this.closeBanner();
         this.closeConfigurationDialog();
