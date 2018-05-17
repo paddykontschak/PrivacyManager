@@ -35,7 +35,7 @@ export class WiredMindsLoader extends BaseScriptLoader
         this.insertDOMElement(`
             <noscript>
                 <div>
-                    <a target="_blank" href="http://www.wiredminds.de"><img src="http://wm.wiredminds.de/track/ctin.php?wm_custnum=__ID__&nojs=1" alt="" border="0"></a>
+                    <a target="_blank" href="http://www.wiredminds.de"><img src="http://wm.wiredminds.de/track/ctin.php?wm_custnum=${config.wiredMindsId}&nojs=1" alt="" border="0"></a>
                 </div>
             </noscript>
         `);
