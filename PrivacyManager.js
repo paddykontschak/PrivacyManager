@@ -107,6 +107,7 @@ export class PrivacyManager
             const scriptLoader = this.scriptLoadersMap[config.type] || null;
             if (null !== scriptLoader)
             {
+                // eslint-disable-next-line new-cap
                 const instance = new scriptLoader();
                 instance.load(config);
             }

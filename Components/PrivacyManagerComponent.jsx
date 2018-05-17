@@ -86,11 +86,11 @@ export class PrivacyManagerComponent
      * If no consent has been given, a banner with a quick accept and a configure button
      * (that links to the configuration dialog) will be shown.
      *
-     * @return {Promise}
+     * @return {window.Promise}
      */
     init ()
     {
-        return new Promise((resolve, reject) =>
+        return new window.Promise((resolve, reject) =>
         {
             if (null !== this.getUserSettings())
             {
@@ -141,7 +141,7 @@ export class PrivacyManagerComponent
     {
         this.closeConfigurationDialog();
 
-        return new Promise((resolve, reject) =>
+        return new window.Promise((resolve, reject) =>
         {
             const userSettings = this.getUserSettings() || DEFAULT_USER_SETTINGS;
 
@@ -159,7 +159,6 @@ export class PrivacyManagerComponent
             this.showConfigurationDialog(configurationProps);
         });
     }
-
 
 
     /**
