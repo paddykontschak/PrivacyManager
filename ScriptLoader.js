@@ -99,7 +99,7 @@ function facebookPixel (config)
     window.fbq("init", config.facebookPixelId);
     window.fbq("track", "PageView");
 
-    insertScriptTag(`<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${config.facebookPixelId}&ev=PageView&noscript=1"/></noscript>`);
+    insertDOMElement(`<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${config.facebookPixelId}&ev=PageView&noscript=1"/></noscript>`);
 }
 
 
