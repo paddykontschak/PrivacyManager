@@ -7,6 +7,7 @@
         width: 100%;
         max-width: 950px;
         margin: 0 auto;
+        padding: 2rem;
         background-color: $bg-light;
     }
 
@@ -52,6 +53,14 @@
         flex-grow: 1;
         flex-shrink: 0;
         font-size: 16px;
+        outline: 0;
+        border: 0;
+        background-color: $color-light-gray;
+        cursor: pointer;
+
+        + .privacy-manager-configuration-mode {
+            margin-left: 5px;
+        }
 
         &.is-active {
             font-weight: 500;
@@ -143,5 +152,14 @@
         bottom: 0;
         background-color: rgba($bg-dark, .2);
         z-index: 1;
+    }
+
+    @media screen and (min-width: 900px) {
+        @at-root & {
+            .privacy-manager-dialog {
+                margin-top: 5rem;
+                padding: 4rem;
+            }
+        }
     }
 }
