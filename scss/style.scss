@@ -1,165 +1,175 @@
 @import "./helper/variables";
 @import "./helper/mixins";
 
-.privacy-manager {
-    .privacy-manager-dialog {
-        position: relative;
-        width: 100%;
-        max-width: 950px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: $bg-light;
+.privacy-manager-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: $bg-light;
+}
+
+.privacy-manager-close-button {
+    @include close-icon($bg-dark);
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+}
+
+.privacy-manager-dialog-header-title {
+    font-size: 32px;
+}
+
+.privacy-manager-privacy-link {
+    text-decoration: underline;
+}
+
+.privacy-manager-dialog-configuration-title {
+    font-size: 25px;
+}
+
+.privacy-manager-dialog-configuration {
+    margin-top: 40px;
+}
+
+.privacy-manager-configurations {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.privacy-manager-configuration-mode {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    height: 150px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    font-size: 16px;
+    outline: 0;
+    border: 0;
+    background-color: $color-light-gray;
+    cursor: pointer;
+
+    + .privacy-manager-configuration-mode {
+        margin-left: 5px;
     }
 
-    .privacy-manager-close-button {
-        @include close-icon($bg-dark);
+    &.is-active {
+        font-weight: 500;
+        background-color: $color-active;
+    }
+}
+
+.privacy-manager-dialog-configuration-comparison {
+    display: flex;
+    margin-top: 20px;
+}
+
+.privacy-manager-action-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.privacy-manager-actions {
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.privacy-manager-action {
+    position: relative;
+    display: block;
+    list-style: none;
+    word-wrap: break-word;
+    padding-left: 35px;
+
+    .privacy-manager-action-icon {
         position: absolute;
-        top: 30px;
-        right: 20px;
-        cursor: pointer;
-        width: 21px;
-        height: 21px;
+        left: 5px;
+        top: 5px;
+        width: 14px;
+        height: 14px;
     }
+}
 
-    .privacy-manager-dialog-header-title {
-        font-size: 32px;
-    }
+.privacy-manager-save-button {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-top: 30px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+}
 
-    .privacy-manager-privacy-link {
-        text-decoration: underline;
-    }
+.privacy-manager-banner {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    color: $text-color-inverted;
+    background-color: $bg-light;
 
-    .privacy-manager-dialog-configuration-title {
-        font-size: 25px;
-    }
-
-    .privacy-manager-dialog-configuration {
-        margin-top: 40px;
-    }
-
-    .privacy-manager-configurations {
+    .privacy-manager-banner-content {
+        position: relative;
         display: flex;
-        justify-content: center;
-        margin-top: 30px;
+        margin: 0 auto;
+        padding: 30px 45px 30px 20px;
+
+        a {
+            text-decoration: underline;
+        }
     }
 
-    .privacy-manager-configuration-mode {
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-width: 0;
-        height: 150px;
+    .privacy-manager-banner-text,
+    .privacy-manager-banner-actions {
         flex-grow: 1;
-        flex-shrink: 0;
-        font-size: 16px;
+        flex-shrink: 1;
+    }
+
+    .privacy-manager-banner-button {
+        display: block;
+        position: relative;
         outline: 0;
         border: 0;
-        background-color: $color-light-gray;
         cursor: pointer;
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+        background-color: $color-light-gray;
+        color: $text-color;
 
-        + .privacy-manager-configuration-mode {
-            margin-left: 5px;
-        }
-
-        &.is-active {
-            font-weight: 500;
-            background-color: $color-active;
-        }
-    }
-
-    .privacy-manager-dialog-configuration-comparison {
-        display: flex;
-        margin-top: 20px;
-    }
-
-    .privacy-manager-action-title {
-        font-size: 20px;
-        font-weight: 500;
-        margin-bottom: 10px;
-    }
-
-    .privacy-manager-actions {
-        width: 50%;
-        padding-left: 20px;
-        padding-right: 20px;
-        min-width: 0;
-        flex-grow: 1;
-        flex-shrink: 0;
-    }
-
-    .privacy-manager-action {
-        position: relative;
-        display: block;
-        list-style: none;
-        word-wrap: break-word;
-        padding-left: 35px;
-
-        .privacy-manager-action-icon {
-            position: absolute;
-            left: 5px;
-            top: 5px;
-            width: 14px;
-            height: 14px;
+        + .privacy-manager-banner-button {
+            margin-top: 20px;
         }
     }
+}
 
-    .privacy-manager-save-button {
-        display: block;
-        margin-left: auto;
-        margin-top: 30px;
-    }
+.privacy-manager-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($bg-dark, .2);
+    z-index: 1;
+}
 
-    .privacy-manager-banner {
-        position: fixed;
-        width: 100%;
-        left: 0;
-        bottom: 0;
-        color: $text-color-inverted;
-        background-color: $bg-light;
-
-        .privacy-manager-banner-content {
-            position: relative;
-            display: flex;
-            margin: 0 auto;
-            padding: 30px 45px 30px 20px;
-
-            a {
-                text-decoration: underline;
-            }
-        }
-
-        .privacy-manager-banner-text,
-        .privacy-manager-banner-actions {
-            flex-grow: 1;
-            flex-shrink: 1;
-        }
-
-        .privacy-manager-banner-button {
-            display: block;
-
-            + .privacy-manager-banner-button {
-                margin-top: 20px;
-            }
-        }
-    }
-
-    .privacy-manager-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba($bg-dark, .2);
-        z-index: 1;
-    }
-
-    @media screen and (min-width: 900px) {
-        @at-root & {
-            .privacy-manager-dialog {
-                margin-top: 5rem;
-                padding: 4rem;
-            }
-        }
+@media screen and (min-width: 900px) {
+    .privacy-manager-dialog {
+        margin-top: 5rem;
+        padding: 4rem;
     }
 }
