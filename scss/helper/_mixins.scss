@@ -1,0 +1,25 @@
+@import "./variables";
+
+///
+/// Renders an absolutely positioned `X`
+///
+@mixin close-icon ($background-color: $color-dark) {
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background-color: $background-color;
+        top: 0;
+        left: calc(50% - 1px);
+    }
+
+    &::before {
+        transform: rotateZ(45deg);
+    }
+
+    &::after {
+        transform: rotateZ(-45deg);
+    }
+}
