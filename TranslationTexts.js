@@ -101,6 +101,8 @@ const TRANSLATIONS = {
 
 
 /**
+ * Retrieves the translation texts for the given language. If not available, it falls back to the default language („en”).
+ *
  * @param {string} language
  * @return {PrivacyManagerTranslationTexts}
  */
