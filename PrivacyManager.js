@@ -1,14 +1,14 @@
 import { remove } from "mojave/dom/manipulate";
 import { PrivacyManagerComponent } from "./Components/PrivacyManagerComponent";
-import { PRIVACY_MANAGER_ALL_SCRIPT_LOADERS_MAP } from "./ScriptLoaders";
+import { PRIVACY_MANAGER_SCRIPT_LOADERS_MAP } from "./ScriptLoader";
 
 export class PrivacyManager
 {
     /**
      * @private
-     * @type {Object.<string, BaseScriptLoader>}
+     * @type {Object.<string, function(config : Object) : void>}
      */
-    scriptLoadersMap = PRIVACY_MANAGER_ALL_SCRIPT_LOADERS_MAP;
+    scriptLoadersMap = PRIVACY_MANAGER_SCRIPT_LOADERS_MAP;
 
     /**
      * @private
@@ -107,9 +107,7 @@ export class PrivacyManager
             const scriptLoader = this.scriptLoadersMap[config.type] || null;
             if (null !== scriptLoader)
             {
-                // eslint-disable-next-line new-cap
-                const instance = new scriptLoader();
-                instance.load(config);
+                scriptLoader(config);
             }
         }
     }
