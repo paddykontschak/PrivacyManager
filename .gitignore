@@ -1,8 +1,5 @@
 /.stylelintcache
+/dist
 /node_modules
 /package-lock.json
-/run-tests.sh
-/tests/dist
 /yarn.lock
-/dist/*
-!/dist/.gitignore
