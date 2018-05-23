@@ -70,7 +70,6 @@
 }
 
 .privacy-manager-dialog-configuration-comparison {
-    display: flex;
     margin-top: 20px;
 }
 
@@ -81,12 +80,14 @@
 }
 
 .privacy-manager-actions {
-    width: 50%;
+    width: 100%;
     padding-left: 20px;
     padding-right: 20px;
     min-width: 0;
-    flex-grow: 1;
-    flex-shrink: 0;
+    
+    & + .privacy-manager-actions {
+        margin-top: 20px;
+    }
 }
 
 .privacy-manager-action {
@@ -168,6 +169,22 @@
     background-color: rgba($bg-dark, .2);
     z-index: 1;
     overflow-y: auto;
+}
+
+@media screen and (min-width:600px) {
+    .privacy-manager-dialog-configuration-comparison {
+        display: flex;
+    }
+
+    .privacy-manager-actions {
+        width: 50%;
+        flex-grow: 1;
+        flex-shrink: 0
+            
+        & + .privacy-manager-actions {
+            margin-top: 0;
+        }
+    }
 }
 
 @media screen and (min-width: 900px) {
